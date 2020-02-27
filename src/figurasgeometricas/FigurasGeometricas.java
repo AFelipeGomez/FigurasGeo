@@ -13,48 +13,59 @@ import java.lang.Math;
  */
 public class FigurasGeometricas {
 
-    protected int coordenadaX1;
+    private int coordenadaX1;
     private int coordenadaX2;
     private int coordenadaX3;
-    protected int coordenadaX4;
-    protected int coordenadaY1;
+    private int coordenadaY1;
     private int coordenadaY2;
     private int coordenadaY3;
-    protected int coordenadaY4;
-    protected int perimetro;
-    protected int area;
+    private int perimetro;
+    private float area;
     private int color;
-    protected float distancia1;
-    protected float distancia2;
-    protected float distancia3;
+    private int lado1;
+    private int lado2;
+    private int lado3;
 
-    public FigurasGeometricas(int coordenada1, int coordenada2, int coordenada3, int color) {
+    public FigurasGeometricas(int coordenadaX1, int coordenadaX2, int coordenadaX3, int coordenadaY1, int coordenadaY2, int coordenadaY3, int color) {
 
-        this.color = color;
-        this.coordenadaX1 = coordenada1;
-        this.coordenadaX2 = coordenada2;
-        this.coordenadaX3 = coordenada3;
+        this.coordenadaX1 = coordenadaX1;
+        this.coordenadaX2 = coordenadaX2;
+        this.coordenadaX3 = coordenadaX3;
+        this.coordenadaY1 = coordenadaY1;
+        this.coordenadaY2 = coordenadaY2;
+        this.coordenadaY3 = coordenadaY3;
         this.color = color;
 
     }
 
     public void hallarPerimetro() {
-        perimetro = (int) (distancia1 + distancia2 + distancia3);
+        perimetro = (int) (lado1 + lado2 + lado3);
     }
 
-    public void hallarDistancias(int coordenadaX1, int coordenadaX2, int coordenadaX3, int coordenadaX4, int coordenadaY1, int coordenadaY2, int coordenadaY3, int coordenadaY4) {
-        int distancia1;
-        int distancia2;
-        int distancia3;
+    public void hallarArea() {
+        float heron;
+        heron = perimetro / 2;
+        area = (float) Math.sqrt(heron * (heron - lado1) * (heron - lado2) * (heron - lado3));
+    }
 
-        distancia1 = (int) Math.sqrt(Math.pow((coordenadaX2 - coordenadaX1), 2) + Math.pow((coordenadaY2 - coordenadaY1), 2));
-        distancia2 = (int) Math.sqrt(Math.pow((coordenadaX3 - coordenadaX2), 2) + Math.pow((coordenadaY3 - coordenadaY2), 2));
-        distancia3 = (int) Math.sqrt(Math.pow((coordenadaX4 - coordenadaX3), 2) + Math.pow((coordenadaY4 - coordenadaY3), 2));
+    public void hallarLados(int coordenadaX1, int coordenadaX2, int coordenadaX3, int coordenadaY1, int coordenadaY2, int coordenadaY3) {
 
-        this.distancia1 = distancia1;
-        this.distancia2 = (int) distancia1;
-        this.distancia3 = (int) distancia1;
+        this.lado1 = (int) Math.sqrt(Math.pow((coordenadaX2 - coordenadaX1), 2) + Math.pow((coordenadaY2 - coordenadaY1), 2));
+        this.lado2 = (int) Math.sqrt(Math.pow((coordenadaX3 - coordenadaX2), 2) + Math.pow((coordenadaY3 - coordenadaY2), 2));
+        this.lado3 = (int) Math.sqrt(Math.pow((coordenadaX1 - coordenadaX3), 2) + Math.pow((coordenadaY1 - coordenadaY3), 2));
 
+    }
+
+    public int getLado1() {
+        return lado1;
+    }
+
+    public int getLado2() {
+        return lado2;
+    }
+
+    public int getLado3() {
+        return lado3;
     }
 
     public int getPerimetro() {
@@ -62,10 +73,35 @@ public class FigurasGeometricas {
     }
 
     public int getArea() {
-        return area;
+        return (int) area;
     }
 
     public int getColor() {
         return color;
     }
+
+    public void setPerimetro(int perimetro) {
+        this.perimetro = perimetro;
+    }
+
+    public void setArea(int area) {
+        this.area = area;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public void setLado1(int lado1) {
+        this.lado1 = lado1;
+    }
+
+    public void setLado2(int lado2) {
+        this.lado2 = lado2;
+    }
+
+    public void setLado3(int lado3) {
+        this.lado3 = lado3;
+    }
+
 }

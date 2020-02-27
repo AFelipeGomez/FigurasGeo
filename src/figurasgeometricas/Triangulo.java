@@ -9,13 +9,14 @@ package figurasgeometricas;
  *
  * @author Andres Gomez - Ruby Cardenas
  */
-public class Triangulo extends FigurasGeometricas{
+public class Triangulo extends FigurasGeometricas {
 
-    public Triangulo(int coordenada1, int coordenada2, int coordenada3, int color) {
-        super(coordenada1, coordenada2, coordenada3, color);
+    public Triangulo(int coordenadaX1, int coordenadaX2, int coordenadaX3, int coordenadaY1, int coordenadaY2, int coordenadaY3, int color) {
+        super(coordenadaX1, coordenadaX2, coordenadaX3, coordenadaY1, coordenadaY2, coordenadaY3, color);
     }
 
-    
-    
-    
+    public void hallarAreaEquilatero() {
+        setArea((int) (Math.sqrt(3) * (Math.pow(2, getLado2()))));
+    }
+
 }

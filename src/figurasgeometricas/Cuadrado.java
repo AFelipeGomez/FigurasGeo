@@ -7,12 +7,16 @@ package figurasgeometricas;
 
 /**
  *
- * @author PIPE
+ * @author Andres Gomez - Ruby Cardenas
  */
 public class Cuadrado extends CuadradoRectangulo{
 
-    public Cuadrado(int coordenada1, int coordenada2, int coordenada3, int color) {
-        super(coordenada1, coordenada2, coordenada3, color);
-    }   
+    public Cuadrado(int coordenadaX1, int coordenadaX2, int coordenadaX3, int coordenadaY1, int coordenadaY2, int coordenadaY3, int color, int lado4) {
+        super(coordenadaX1, coordenadaX2, coordenadaX3, coordenadaY1, coordenadaY2, coordenadaY3, color, lado4);
+        
+    }
+    
+
+      
     
 }
