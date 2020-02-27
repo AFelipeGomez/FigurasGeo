@@ -7,7 +7,9 @@ package figurasgeometricas;
 
 /**
  *
- * @author Asus-PC
+ * @author Andrés Gómez - Ruby Cárdenas
+ * @version 1.0.0
+ * Esta clase crea la interfaz que el usuario verá cuando el proyecto se ejecute
  */
 public class Interfaz extends javax.swing.JFrame {
 
@@ -27,78 +29,99 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        planoCartesiano = new javax.swing.JPanel();
+        tituloPrincipal = new javax.swing.JLabel();
+        seleccionarFigura = new javax.swing.JComboBox();
+        seleccionarColor = new javax.swing.JComboBox();
+        digiteCoordenadas = new javax.swing.JLabel();
+        tituloCoordenada1 = new javax.swing.JLabel();
+        coor1PosicionX = new javax.swing.JTextField();
+        coor1PosicionY = new javax.swing.JTextField();
+        tituloCoordenada2 = new javax.swing.JLabel();
+        coor2PosicionX = new javax.swing.JTextField();
+        coor2PosicionY = new javax.swing.JTextField();
+        tituloCoordenada3 = new javax.swing.JLabel();
+        coor3PosicionX = new javax.swing.JTextField();
+        coor3PosicionY = new javax.swing.JTextField();
+        tituloCoordenada4 = new javax.swing.JLabel();
+        coor4PosicionX = new javax.swing.JTextField();
+        coor4PosicionY = new javax.swing.JTextField();
+        graficar = new javax.swing.JButton();
+        tituloArea = new javax.swing.JLabel();
+        tituloPerimetro = new javax.swing.JLabel();
+        area = new javax.swing.JLabel();
+        perimetro = new javax.swing.JLabel();
+        tituloTipoTriangulo = new javax.swing.JLabel();
+        tipoTriangulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout planoCartesianoLayout = new javax.swing.GroupLayout(planoCartesiano);
+        planoCartesiano.setLayout(planoCartesianoLayout);
+        planoCartesianoLayout.setHorizontalGroup(
+            planoCartesianoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 384, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 352, Short.MAX_VALUE)
+        planoCartesianoLayout.setVerticalGroup(
+            planoCartesianoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        tituloPrincipal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        tituloPrincipal.setText("FIGURAS GEOMÉTRICAS");
+        tituloPrincipal.setName("tituloGeneral"); // NOI18N
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        seleccionarFigura.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione la figura", "Triángulo", "Cuadrado", "Rectangulo" }));
+        seleccionarFigura.setName("seleccionarFigura"); // NOI18N
 
-        jTextField1.setText("jTextField1");
+        seleccionarColor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione el Color", "Azul", "Amarillo", "Rojo", "Verde", "Violeta", "Negro" }));
+        seleccionarColor.setName("seleccionarColor"); // NOI18N
 
-        jTextField2.setText("jTextField1");
+        digiteCoordenadas.setText("Digite las coordenadas");
+        digiteCoordenadas.setToolTipText("");
+        digiteCoordenadas.setName("tituloCoordenadas"); // NOI18N
 
-        jTextField3.setText("jTextField1");
+        tituloCoordenada1.setText("Primera Coordenada");
+        tituloCoordenada1.setName("tituloCoor1"); // NOI18N
 
-        jTextField4.setText("jTextField1");
+        coor1PosicionX.setName("coor1PosicionX"); // NOI18N
 
-        jLabel1.setText("jLabel1");
+        coor1PosicionY.setName("coor1PosicionY"); // NOI18N
 
-        jLabel2.setText("jLabel1");
+        tituloCoordenada2.setText("Segunda Coordenada");
+        tituloCoordenada2.setName("tituloCoor2"); // NOI18N
 
-        jLabel3.setText("jLabel1");
+        coor2PosicionX.setName("coor1PosicionX"); // NOI18N
 
-        jLabel4.setText("jLabel1");
+        coor2PosicionY.setName("coor2PosicionY"); // NOI18N
 
-        jButton1.setText("jButton1");
+        tituloCoordenada3.setText("Tercera Coordenada");
+        tituloCoordenada3.setName("tituloCoor3"); // NOI18N
 
-        jLabel5.setText("jLabel5");
+        coor3PosicionX.setName("coor1PosicionX"); // NOI18N
 
-        jLabel6.setText("jLabel6");
+        coor3PosicionY.setName("coor1PosicionY"); // NOI18N
 
-        jLabel7.setText("jLabel6");
+        tituloCoordenada4.setText("Cuarta coordenada");
+        tituloCoordenada4.setName("tituloCoor4"); // NOI18N
 
-        jLabel8.setText("jLabel8");
+        coor4PosicionX.setName("coor1PosicionX"); // NOI18N
 
-        jLabel9.setText("jLabel8");
+        coor4PosicionY.setName("coor1PosicionY"); // NOI18N
 
-        jLabel10.setText("jLabel10");
+        graficar.setText("GRAFICAR Y CALCULAR");
 
-        jLabel11.setText("jLabel11");
+        tituloArea.setText("Area de la figura");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel12.setText("FIGURAS GEOMETRICAS");
+        tituloPerimetro.setText("Perímetro de la figura");
+
+        area.setText("---");
+
+        perimetro.setText("---");
+
+        tituloTipoTriangulo.setText("Tipo de triangulo");
+
+        tipoTriangulo.setText("---");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,100 +129,120 @@ public class Interfaz extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(232, 232, 232)
-                .addComponent(jLabel12)
+                .addComponent(tituloPrincipal)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(planoCartesiano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3))
-                                .addGap(42, 42, 42))
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(coor2PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(coor2PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tituloCoordenada1)
+                                            .addComponent(tituloCoordenada2)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(coor1PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(coor1PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(seleccionarFigura, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tituloCoordenada3)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(coor3PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(coor3PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(coor4PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(coor4PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(tituloCoordenada4))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(seleccionarColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(area)
+                                    .addComponent(tituloArea)
+                                    .addComponent(tituloTipoTriangulo))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tipoTriangulo)
+                                    .addComponent(tituloPerimetro)
+                                    .addComponent(perimetro))
+                                .addGap(46, 46, 46))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(graficar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(3, 3, 3)))
+                        .addContainerGap(33, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(98, 98, 98)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel7)))
-                        .addGap(46, 46, 46)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(digiteCoordenadas)
+                        .addGap(105, 105, 105))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(tituloPrincipal)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(planoCartesiano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel12)
-                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(seleccionarFigura, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(seleccionarColor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addComponent(digiteCoordenadas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
+                                    .addComponent(tituloCoordenada1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tituloCoordenada3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(coor1PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(coor1PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(coor3PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(coor3PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(24, 24, 24)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
+                                    .addComponent(tituloCoordenada2)
+                                    .addComponent(tituloCoordenada4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(coor2PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(coor2PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(coor4PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(coor4PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(graficar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(jLabel6)
+                                .addComponent(tituloArea)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 8, Short.MAX_VALUE)))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
-                .addContainerGap(45, Short.MAX_VALUE))
+                                .addComponent(area)
+                                .addGap(32, 32, 32))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(tituloPerimetro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(perimetro)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tituloTipoTriangulo)
+                                    .addComponent(tipoTriangulo))))))
+                .addGap(45, 45, 45))
         );
 
         pack();
@@ -241,25 +284,29 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel area;
+    private javax.swing.JTextField coor1PosicionX;
+    private javax.swing.JTextField coor1PosicionY;
+    private javax.swing.JTextField coor2PosicionX;
+    private javax.swing.JTextField coor2PosicionY;
+    private javax.swing.JTextField coor3PosicionX;
+    private javax.swing.JTextField coor3PosicionY;
+    private javax.swing.JTextField coor4PosicionX;
+    private javax.swing.JTextField coor4PosicionY;
+    private javax.swing.JLabel digiteCoordenadas;
+    private javax.swing.JButton graficar;
+    private javax.swing.JLabel perimetro;
+    private javax.swing.JPanel planoCartesiano;
+    private javax.swing.JComboBox seleccionarColor;
+    private javax.swing.JComboBox seleccionarFigura;
+    private javax.swing.JLabel tipoTriangulo;
+    private javax.swing.JLabel tituloArea;
+    private javax.swing.JLabel tituloCoordenada1;
+    private javax.swing.JLabel tituloCoordenada2;
+    private javax.swing.JLabel tituloCoordenada3;
+    private javax.swing.JLabel tituloCoordenada4;
+    private javax.swing.JLabel tituloPerimetro;
+    private javax.swing.JLabel tituloPrincipal;
+    private javax.swing.JLabel tituloTipoTriangulo;
     // End of variables declaration//GEN-END:variables
 }
