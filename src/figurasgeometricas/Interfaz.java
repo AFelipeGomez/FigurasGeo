@@ -17,18 +17,16 @@ import javax.swing.JPanel;
  */
 public class Interfaz extends javax.swing.JFrame {
 
-    private String coordenada1Px;
-    private String coordenada1Py;
-    private String coordenada2Px;
-    private String coordenada2Py;
-    private String coordenada3Px;
-    private String coordenada3Py;
-    private String coordenada4Px;
-    private String coordenada4Py;
-    private int color;
-    private int seleccionFigura;
-    private int opcionColor;
-    
+    String coordenada1Px;
+    String coordenada1Py;
+    String coordenada2Px;
+    String coordenada2Py;
+    String coordenada3Px;
+    String coordenada3Py;
+    String coordenada4Px;
+    String coordenada4Py;
+    int opcionColor;
+    int seleccionFigura;
 
     /**
      * Creates new form Interfaz
@@ -96,7 +94,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        seleccionarColor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione el Color", "Azul", "Amarillo", "Rojo", "Verde", "Violeta", "Negro" }));
+        seleccionarColor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione el Color", "Azul", "Amarillo", "Rojo", "Verde", "Negro" }));
         seleccionarColor.setName("seleccionarColor"); // NOI18N
 
         digiteCoordenadas.setText("Digite las coordenadas");
@@ -276,6 +274,32 @@ public class Interfaz extends javax.swing.JFrame {
     public class DibujarFiguras extends JPanel {
 
         protected void paintComponent(Graphics g) {
+            seleccionarColor();
+            switch (opcionColor) {
+                case 1: {
+                    g.setColor(Color.blue);
+                }
+                break;
+                case 2: {
+                    g.setColor(Color.yellow);
+                }
+                break;
+                case 3: {
+                    g.setColor(Color.red);
+                }
+                break;
+                case 4: {
+                    g.setColor(Color.green);
+                }
+                break;
+                case 5: {
+                    g.setColor(Color.black);
+                }
+                break;
+                default: {
+                    g.setColor(Color.white);
+                }
+            }
             super.paintComponent(g);
             seleccionarColor();
             switch (opcionColor) {
@@ -340,6 +364,7 @@ public class Interfaz extends javax.swing.JFrame {
         planoCartesiano.add(dibujo);
         planoCartesiano.repaint();
     }
+
 
 
     private void seleccionarFiguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarFiguraActionPerformed
