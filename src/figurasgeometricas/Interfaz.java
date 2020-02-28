@@ -5,6 +5,7 @@
  */
 package figurasgeometricas;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
@@ -24,6 +25,7 @@ public class Interfaz extends javax.swing.JFrame {
     String coordenada3Py;
     String coordenada4Px;
     String coordenada4Py;
+    int opcionColor;
 
     /**
      * Creates new form Interfaz
@@ -91,7 +93,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        seleccionarColor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione el Color", "Azul", "Amarillo", "Rojo", "Verde", "Violeta", "Negro" }));
+        seleccionarColor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione el Color", "Azul", "Amarillo", "Rojo", "Verde", "Negro" }));
         seleccionarColor.setName("seleccionarColor"); // NOI18N
 
         digiteCoordenadas.setText("Digite las coordenadas");
@@ -269,12 +271,38 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     public class DibujarFiguras extends JPanel {
+
         public DibujarFiguras() {
         }
 
         protected void paintComponent(Graphics g) {
+            seleccionarColor();
+            switch (opcionColor) {
+                case 1: {
+                    g.setColor(Color.blue);
+                }
+                break;
+                case 2: {
+                    g.setColor(Color.yellow);
+                }
+                break;
+                case 3: {
+                    g.setColor(Color.red);
+                }
+                break;
+                case 4: {
+                    g.setColor(Color.green);
+                }
+                break;
+                case 5: {
+                    g.setColor(Color.black);
+                }
+                break;
+                default: {
+                    g.setColor(Color.white);
+                }
+            }
             super.paintComponent(g);
-            
             g.drawLine(Integer.parseInt(coordenada1Px), Integer.parseInt(coordenada1Py), Integer.parseInt(coordenada2Px), Integer.parseInt(coordenada2Py));
             g.drawLine(Integer.parseInt(coordenada2Px), Integer.parseInt(coordenada2Py), Integer.parseInt(coordenada3Px), Integer.parseInt(coordenada3Py));
             g.drawLine(Integer.parseInt(coordenada3Px), Integer.parseInt(coordenada3Py), Integer.parseInt(coordenada1Px), Integer.parseInt(coordenada1Py));
@@ -289,13 +317,13 @@ public class Interfaz extends javax.swing.JFrame {
         planoCartesiano.repaint();
     }
 
+
     private void seleccionarFiguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarFiguraActionPerformed
         seleccionarFigura();
     }//GEN-LAST:event_seleccionarFiguraActionPerformed
 
     private void graficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficarActionPerformed
         obtenerDatos();
-        seleccionarColor();
         seleccionarFigura();
         dibujar();
     }//GEN-LAST:event_graficarActionPerformed
@@ -329,15 +357,7 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     public void seleccionarColor() {
-        int opcion = seleccionarColor.getSelectedIndex();
-        switch (opcion) {
-            case 1: {
-            }
-            break;
-
-            default: {
-            }
-        }
+        opcionColor = seleccionarColor.getSelectedIndex();
     }
 
     /**
