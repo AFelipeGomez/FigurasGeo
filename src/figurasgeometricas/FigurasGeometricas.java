@@ -20,13 +20,12 @@ public class FigurasGeometricas {
     private int coordenadaY2;
     private int coordenadaY3;
     private int perimetro;
-    private float area;
-    private int color;
+    private float area;    
     private int lado1;
     private int lado2;
     private int lado3;
 
-    public FigurasGeometricas(int coordenadaX1, int coordenadaX2, int coordenadaX3, int coordenadaY1, int coordenadaY2, int coordenadaY3, int color) {
+    public FigurasGeometricas(int coordenadaX1, int coordenadaX2, int coordenadaX3, int coordenadaY1, int coordenadaY2, int coordenadaY3) {
 
         this.coordenadaX1 = coordenadaX1;
         this.coordenadaX2 = coordenadaX2;
@@ -34,7 +33,7 @@ public class FigurasGeometricas {
         this.coordenadaY1 = coordenadaY1;
         this.coordenadaY2 = coordenadaY2;
         this.coordenadaY3 = coordenadaY3;
-        this.color = color;
+        
 
     }
 
@@ -56,6 +55,35 @@ public class FigurasGeometricas {
 
     }
 
+    public int getCoordenadaX1() {
+        return coordenadaX1;
+    }
+
+    public int getCoordenadaX2() {
+        return coordenadaX2;
+    }
+
+    public int getCoordenadaX3() {
+        return coordenadaX3;
+    }
+
+    public int getCoordenadaY1() {
+        return coordenadaY1;
+    }
+
+    public int getCoordenadaY2() {
+        return coordenadaY2;
+    }
+
+    public int getCoordenadaY3() {
+        return coordenadaY3;
+    }
+
+    public float getArea() {
+        return area;
+    }
+    
+
     public int getLado1() {
         return lado1;
     }
@@ -72,13 +100,9 @@ public class FigurasGeometricas {
         return perimetro;
     }
 
-    public int getArea() {
-        return (int) area;
-    }
+    
 
-    public int getColor() {
-        return color;
-    }
+   
 
     public void setPerimetro(int perimetro) {
         this.perimetro = perimetro;
@@ -88,9 +112,7 @@ public class FigurasGeometricas {
         this.area = area;
     }
 
-    public void setColor(int color) {
-        this.color = color;
-    }
+    
 
     public void setLado1(int lado1) {
         this.lado1 = lado1;
