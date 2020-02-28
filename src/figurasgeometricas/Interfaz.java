@@ -27,6 +27,14 @@ public class Interfaz extends javax.swing.JFrame {
     String coordenada4Py;
     int opcionColor;
     int seleccionFigura;
+    int coordenada1X;
+    int coordenada1Y;
+    int coordenada2X;
+    int coordenada2Y;
+    int coordenada3X;
+    int coordenada3Y;
+    int coordenada4X;
+    int coordenada4Y;
 
     /**
      * Creates new form Interfaz
@@ -274,32 +282,7 @@ public class Interfaz extends javax.swing.JFrame {
     public class DibujarFiguras extends JPanel {
 
         protected void paintComponent(Graphics g) {
-            seleccionarColor();
-            switch (opcionColor) {
-                case 1: {
-                    g.setColor(Color.blue);
-                }
-                break;
-                case 2: {
-                    g.setColor(Color.yellow);
-                }
-                break;
-                case 3: {
-                    g.setColor(Color.red);
-                }
-                break;
-                case 4: {
-                    g.setColor(Color.green);
-                }
-                break;
-                case 5: {
-                    g.setColor(Color.black);
-                }
-                break;
-                default: {
-                    g.setColor(Color.white);
-                }
-            }
+
             super.paintComponent(g);
             seleccionarColor();
             switch (opcionColor) {
@@ -327,7 +310,6 @@ public class Interfaz extends javax.swing.JFrame {
                     g.setColor(Color.white);
                 }
             }
-            
 
             switch (seleccionFigura) {
                 case 1:
@@ -366,28 +348,49 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
 
-
     private void seleccionarFiguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarFiguraActionPerformed
         seleccionarFigura();
     }//GEN-LAST:event_seleccionarFiguraActionPerformed
 
     private void graficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficarActionPerformed
         obtenerDatos();
-        FigurasGeometricas figuras = new FigurasGeometricas(Integer.parseInt(coordenada1Px), Integer.parseInt(coordenada2Px), Integer.parseInt(coordenada3Px), Integer.parseInt(coordenada1Py), Integer.parseInt(coordenada2Py), Integer.parseInt(coordenada3Py));
-        CuadradoRectangulo cr = new CuadradoRectangulo(Integer.parseInt(coordenada1Px), Integer.parseInt(coordenada2Px), Integer.parseInt(coordenada3Px), Integer.parseInt(coordenada4Px), Integer.parseInt(coordenada1Py), Integer.parseInt(coordenada2Py), Integer.parseInt(coordenada3Py), Integer.parseInt(coordenada4Py));
-        Triangulo tr = new Triangulo(Integer.parseInt(coordenada1Px), Integer.parseInt(coordenada2Px), Integer.parseInt(coordenada3Px), Integer.parseInt(coordenada1Py), Integer.parseInt(coordenada2Py), Integer.parseInt(coordenada3Py));
+        coordenada1X = Integer.parseInt(coordenada1Px);
+        coordenada1Y = Integer.parseInt(coordenada1Py);
+        coordenada2X = Integer.parseInt(coordenada2Px);
+        coordenada2Y = Integer.parseInt(coordenada2Py);
+        coordenada3X = Integer.parseInt(coordenada3Px);
+        coordenada3Y = Integer.parseInt(coordenada3Py);
+        if (!coordenada4Px.isEmpty() || !coordenada4Py.isEmpty()) {
+            coordenada4X = Integer.parseInt(coordenada4Px);
+            coordenada4Y = Integer.parseInt(coordenada4Py);
+
+        }
+
+        FigurasGeometricas figuras = new FigurasGeometricas(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
+        CuadradoRectangulo cr = new CuadradoRectangulo(coordenada1X, coordenada2X, coordenada3X, coordenada4X, coordenada1Y, coordenada2Y, coordenada3Y, coordenada4Y);
         switch (seleccionFigura) {
             case 1:
-                figuras.hallarLados(Integer.parseInt(coordenada1Px), Integer.parseInt(coordenada2Px), Integer.parseInt(coordenada3Px), Integer.parseInt(coordenada1Py), Integer.parseInt(coordenada2Py), Integer.parseInt(coordenada3Py));
+                figuras.hallarLados(coordenada1X, coordenada2X, coordenada3X, coordenada1Y, coordenada2Y, coordenada3Y);
                 figuras.hallarPerimetro();
                 figuras.hallarArea();
-                figuras.getPerimetro();                
                 area.setText(String.valueOf(figuras.getArea()));
                 perimetro.setText(String.valueOf(figuras.getPerimetro()));
-                
+
                 break;
             case 2:
-                
+                cr.hallarLados();
+                cr.hallarArea();
+                cr.hallarPerimetro();
+                area.setText(String.valueOf(figuras.getArea()));
+                perimetro.setText(String.valueOf(figuras.getPerimetro()));
+
+                break;
+            case 3:
+                cr.hallarLados();
+                cr.hallarArea();
+                cr.hallarPerimetro();
+                area.setText(String.valueOf(figuras.getArea()));
+                perimetro.setText(String.valueOf(figuras.getPerimetro()));
                 break;
         }
 
@@ -427,7 +430,7 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     public void seleccionarColor() {
-        opcionColor = seleccionarColor.getSelectedIndex();        
+        opcionColor = seleccionarColor.getSelectedIndex();
     }
 
     /**

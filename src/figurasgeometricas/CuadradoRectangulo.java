@@ -7,8 +7,7 @@ package figurasgeometricas;
 
 /**
  *
- * @author Andres Gomez - Ruby Cardenas
- */
+ * @author Andres Gomez - Ruby Cardenas */
 public class CuadradoRectangulo extends FigurasGeometricas {
 
     private int coordenadaX4;
