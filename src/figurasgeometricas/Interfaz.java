@@ -5,13 +5,25 @@
  */
 package figurasgeometricas;
 
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Andrés Gómez - Ruby Cárdenas
- * @version 1.0.0
- * Esta clase crea la interfaz que el usuario verá cuando el proyecto se ejecute
+ * @version 1.0.0 Esta clase crea la interfaz que el usuario verá cuando el
+ * proyecto se ejecute
  */
 public class Interfaz extends javax.swing.JFrame {
+
+    String coordenada1Px;
+    String coordenada1Py;
+    String coordenada2Px;
+    String coordenada2Py;
+    String coordenada3Px;
+    String coordenada3Py;
+    String coordenada4Px;
+    String coordenada4Py;
 
     /**
      * Creates new form Interfaz
@@ -73,6 +85,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         seleccionarFigura.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione la figura", "Triángulo", "Cuadrado", "Rectangulo" }));
         seleccionarFigura.setName("seleccionarFigura"); // NOI18N
+        seleccionarFigura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seleccionarFiguraActionPerformed(evt);
+            }
+        });
 
         seleccionarColor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione el Color", "Azul", "Amarillo", "Rojo", "Verde", "Violeta", "Negro" }));
         seleccionarColor.setName("seleccionarColor"); // NOI18N
@@ -81,28 +98,28 @@ public class Interfaz extends javax.swing.JFrame {
         digiteCoordenadas.setToolTipText("");
         digiteCoordenadas.setName("tituloCoordenadas"); // NOI18N
 
-        tituloCoordenada1.setText("Primera Coordenada");
+        tituloCoordenada1.setText("Primera Coordenada (X,Y)");
         tituloCoordenada1.setName("tituloCoor1"); // NOI18N
 
         coor1PosicionX.setName("coor1PosicionX"); // NOI18N
 
         coor1PosicionY.setName("coor1PosicionY"); // NOI18N
 
-        tituloCoordenada2.setText("Segunda Coordenada");
+        tituloCoordenada2.setText("Segunda Coordenada (X,Y)");
         tituloCoordenada2.setName("tituloCoor2"); // NOI18N
 
         coor2PosicionX.setName("coor1PosicionX"); // NOI18N
 
         coor2PosicionY.setName("coor2PosicionY"); // NOI18N
 
-        tituloCoordenada3.setText("Tercera Coordenada");
+        tituloCoordenada3.setText("Tercera Coordenada (X,Y)");
         tituloCoordenada3.setName("tituloCoor3"); // NOI18N
 
         coor3PosicionX.setName("coor1PosicionX"); // NOI18N
 
         coor3PosicionY.setName("coor1PosicionY"); // NOI18N
 
-        tituloCoordenada4.setText("Cuarta coordenada");
+        tituloCoordenada4.setText("Cuarta coordenada (X,Y)");
         tituloCoordenada4.setName("tituloCoor4"); // NOI18N
 
         coor4PosicionX.setName("coor1PosicionX"); // NOI18N
@@ -110,6 +127,11 @@ public class Interfaz extends javax.swing.JFrame {
         coor4PosicionY.setName("coor1PosicionY"); // NOI18N
 
         graficar.setText("GRAFICAR Y CALCULAR");
+        graficar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graficarActionPerformed(evt);
+            }
+        });
 
         tituloArea.setText("Area de la figura");
 
@@ -162,12 +184,11 @@ public class Interfaz extends javax.swing.JFrame {
                                                 .addComponent(coor3PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(coor3PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(coor4PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(coor4PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(tituloCoordenada4))))
+                                            .addComponent(tituloCoordenada4)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(coor4PosicionX, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(coor4PosicionY, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(seleccionarColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -185,7 +206,7 @@ public class Interfaz extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(graficar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(3, 3, 3)))
-                        .addContainerGap(33, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(digiteCoordenadas)
@@ -247,6 +268,77 @@ public class Interfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    public class DibujarFiguras extends JPanel {
+        public DibujarFiguras() {
+        }
+
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            
+            g.drawLine(Integer.parseInt(coordenada1Px), Integer.parseInt(coordenada1Py), Integer.parseInt(coordenada2Px), Integer.parseInt(coordenada2Py));
+            g.drawLine(Integer.parseInt(coordenada2Px), Integer.parseInt(coordenada2Py), Integer.parseInt(coordenada3Px), Integer.parseInt(coordenada3Py));
+            g.drawLine(Integer.parseInt(coordenada3Px), Integer.parseInt(coordenada3Py), Integer.parseInt(coordenada1Px), Integer.parseInt(coordenada1Py));
+        }
+    }
+
+    private void dibujar() {
+        Interfaz.DibujarFiguras dibujo = new Interfaz.DibujarFiguras();
+        dibujo.setBounds(50, 100, 1000, 1000);
+        dibujo.setOpaque(false);
+        planoCartesiano.add(dibujo);
+        planoCartesiano.repaint();
+    }
+
+    private void seleccionarFiguraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionarFiguraActionPerformed
+        seleccionarFigura();
+    }//GEN-LAST:event_seleccionarFiguraActionPerformed
+
+    private void graficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficarActionPerformed
+        obtenerDatos();
+        seleccionarColor();
+        seleccionarFigura();
+        dibujar();
+    }//GEN-LAST:event_graficarActionPerformed
+
+    public void obtenerDatos() {
+        coordenada1Px = coor1PosicionX.getText();
+        coordenada1Py = coor1PosicionY.getText();
+        coordenada2Px = coor2PosicionX.getText();
+        coordenada2Py = coor2PosicionY.getText();
+        coordenada3Px = coor3PosicionX.getText();
+        coordenada3Py = coor3PosicionY.getText();
+        coordenada4Px = coor4PosicionX.getText();
+        coordenada4Py = coor4PosicionY.getText();
+    }
+
+    public void seleccionarFigura() {
+        int opcion = seleccionarFigura.getSelectedIndex();
+        switch (opcion) {
+            case 1: {
+                tituloCoordenada4.setVisible(false);
+                coor4PosicionX.setVisible(false);
+                coor4PosicionY.setVisible(false);
+            }
+            break;
+            default: {
+                tituloCoordenada4.setVisible(true);
+                coor4PosicionX.setVisible(true);
+                coor4PosicionY.setVisible(true);
+            }
+        }
+    }
+
+    public void seleccionarColor() {
+        int opcion = seleccionarColor.getSelectedIndex();
+        switch (opcion) {
+            case 1: {
+            }
+            break;
+
+            default: {
+            }
+        }
+    }
 
     /**
      * @param args the command line arguments
